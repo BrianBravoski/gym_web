@@ -2,13 +2,37 @@ import React, { useState, useEffect } from 'react';
 
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 
+import HorizontalScrollBar from './HorizontalScrollBar';
+import { fetchData, exerciseOptions } from '../utils/fetchData';
+
 const SearchExercises = () => {
 
     const[ search, setSearch] =useState('')
+    const [exercises, setExercises] = useState([]);
+    const [bodyParts, setBodyParts]= useState([]);
+
+    useEffect(() =>{
+       const fetchExercisesData = async() =>{
+        const bodyPartsData = await fetchData  ('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
+       }
+
+       fetchExercisesData();
+    },[])
 
     const handleSearch= async() =>{
         if(search){
-            // const exercisesData = await fetchData();
+             const exercisesData = await fetchData
+             ('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+
+             const SearchedExercises =exercisesData.filter
+             ((exercise)=> exercise.name.toLowerCase().includes(search)
+             ||exercise.target.toLowerCase().includes(search)
+             ||exercise.equipment.toLowerCase().includes(search)
+             ||exercise.bodyPart.toLowerCase().includes(search)
+             );
+
+             setSearch('');
+             setExercises(SearchedExercises)
         }
     }
 
@@ -43,7 +67,7 @@ const SearchExercises = () => {
                 />
                 <Button className="search-btn"
                 sx={{
-                    bgColor:'#ff2625',
+                    backgroundColor:'#ff2625',
                     color:'#fff',
                     textTransform:'none',
                     width:{ lg: '175px', xs :'80px'},
@@ -58,6 +82,9 @@ const SearchExercises = () => {
                 >
                     Search
                 </Button>
+            </Box>
+            <Box sx={{position:'relative', width:'100%', p:'20px'}}>
+                <HorizontalScrollBar data={bodyParts} />
             </Box>
         </Stack>
     )
