@@ -26,7 +26,7 @@ const HeroBanner = () => {
                 Check out the most effective exercise
             </Typography>
             <Button variant='contained' color="error" href="#exercises"
-            sx={{backgroundColor:'#ff2625', padding:'10px'}}> Explore Exercises</Button>
+                sx={{ backgroundColor: '#ff2625', padding: '10px' }}> Explore Exercises</Button>
             <Typography
                 fontWeight={600}
                 color=" #ff2625"
