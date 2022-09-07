@@ -15,10 +15,12 @@ const Home = () => {
                 setExercises={setExercises}
                 bodyPart={bodyPart}
                 setBodyPart={setBodyPart} />
-            <Exercises 
-            setExercises={setExercises}
-            bodyPart={bodyPart}
-            setBodyPart={setBodyPart}/>
+            <Exercises
+                setExercises={setExercises}
+                bodyPart={bodyPart}
+                // Exercises={Exercises}
+                setBodyPart={setBodyPart}
+            />
         </Box>
     )
 }
