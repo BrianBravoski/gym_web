@@ -16,9 +16,10 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
             </Typography>
             <Stack direction="row" sx={{ gap: { lg: '110px', xs: '50px' } }}
                 flexWrap="wrap" justifyContent="center" >
-                {exercises.map((exercise, index) => (
+                {/* {exercises.map((exercise, index) => (
                   <ExerciseCard  key={index} exercise={exercise}/>
-                ))}
+                ))} */}
+                <ExerciseCard  />
             </Stack>
         </Box>
     )
