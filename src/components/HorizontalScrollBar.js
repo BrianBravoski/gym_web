@@ -15,7 +15,7 @@ const LeftArrow = () => {
       <img src={LeftArrowIcon} alt="right-arrow" />
     </Typography>
   );
-}; 
+};
 
 const RightArrow = () => {
   const { scrollNext } = useContext(VisibilityContext);
@@ -28,17 +28,17 @@ const RightArrow = () => {
 };
 
 const HorizontalScrollbar = ({ data, bodyParts, setBodyPart, bodyPart }) => (
-  <ScrollMenu  LeftArrow={LeftArrow} RightArrow={RightArrow} >
+  <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} >
     {data.map((item) => (
-      <Box 
+      <Box
         key={item.id || item}
         itemId={item.id || item}
         title={item.id || item}
         m="0 40px"
       >
-        {bodyParts ? <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} /> : <ExerciseCard exercise={item} /> }
+        {bodyParts ? <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} /> : <ExerciseCard exercise={item} />}
       </Box>
-    ))} 
+    ))}
   </ScrollMenu>
 );
 
