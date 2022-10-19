@@ -21,7 +21,7 @@ Chuma gym is a web application that is built upon Exercise Api from RapidApis. T
 The website also shows which exercises are similar and which share the same exercise equipment.
 A small illustration is used to show which body parts are targeted and there are youtube links with videos on how to perform the specific exercises.
 
-The link is https://chumagym.etlify.app
+The link is https://chumagym.netlify.app
  
 ### Built With
 
